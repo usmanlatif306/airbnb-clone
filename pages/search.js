@@ -3,9 +3,10 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
+import Map from "../components/Map";
 
 function Search({ results }) {
-  console.log(results);
+  // console.log(results);
   const router = useRouter();
   const formattedStartDate = format(
     new Date(router.query.startDate),
@@ -38,6 +39,9 @@ function Search({ results }) {
               <InfoCard key={idx} item={item} />
             ))}
           </div>
+        </section>
+        <section className="hidden xl:inline-flex xl:min-w-[500px]">
+          <Map searchResults={results} />
         </section>
       </main>
       <Footer />
